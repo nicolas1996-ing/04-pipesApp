@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 10px;
+    background-color: var(--surface-b);
+    font-family: var( --font-family);
+
+    /* --font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+     */
+
+}
+
+.text-layout,tr{
+    color: var(--text-color);
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapsese;
+    border: 3px solid black;
+    text-align: center;
+  }
+
+  

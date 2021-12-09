@@ -1,0 +1,48 @@
+<div class="text-layout">
+    <h1>Pipes personalizados</h1>
+    <p>
+        Pipes creados por {{"nosotros" | mayusculas: valor }}
+    </p>
+
+
+
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+
+    </div>
+
+    <div class="p-toolbar-group-right">
+        <button pButton type="button" label="Cambiar letras" icon="pi pi-check" iconPos="right"
+            (click)="cambiarLetras()" class="mr-1 p-button-warning">
+        </button>
+
+        <button pButton icon="pi pi-sort" label="Por nombre" class="mr-1" iconPos="right"
+            (click)="cambiarOrden('nombre')"></button>
+
+        <button pButton icon="pi pi-sort" label="Vuela" class="mr-1 p-button-success" iconPos="right"
+            (click)="cambiarOrden('vuela')"></button>
+
+        <button pButton icon="pi pi-sort" label="Por color" class="mr-1 p-button-help" iconPos="right"
+            (click)="cambiarOrden('color')"></button>
+    </div>
+</p-toolbar>
+
+<div class="p-grid">
+    <div class="p-col m-5">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Vuela</th>
+                <th>Color</th>
+            </tr>
+            <tr *ngFor="let heroe of heroes | ordenar: ordenarPor1">
+                <td>{{heroe.nombre}}</td>
+                <!-- encadenar pipes : de izq a derecha -->
+                <td>{{heroe.vuela| vuela | titlecase}}</td>
+                <td>{{heroe.color}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
